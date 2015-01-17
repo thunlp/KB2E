@@ -231,9 +231,9 @@ private:
     {
         double sum1 = calc_sum(e1_a,e2_a,rel_a);
         double sum2 = calc_sum(e1_b,e2_b,rel_b);
-        if (sum1+4.5>sum2)
+        if (sum1+margin>sum2)
         {
-        	res+=4.5+sum1-sum2;
+        	res+=margin+sum1-sum2;
         	gradient( e1_a, e2_a, rel_a, e1_b, e2_b, rel_b);
         }
     }
