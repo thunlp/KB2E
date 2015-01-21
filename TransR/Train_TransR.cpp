@@ -334,41 +334,6 @@ private:
         	gradient( e1_a, e2_a, rel_a, e1_b, e2_b, rel_b);
         }
     }
-    void gradient_same(int e1, int e2, int rel)
-    {
-    	double ll = entity2num[e2]*1.0/(entity2num[e1]+entity2num[e2]);
-    	double rr = entity2num[e1]*1.0/(entity2num[e1]+entity2num[e2]);
-    	for (int ii=0; ii<m; ii++)
-        {
-            double tmp1 = 0, tmp2 = 0;
-            for (int jj=0; jj<n; jj++)
-            {
-                tmp1+=A[rel][jj][ii]*entity_vec[e1][jj];
-                tmp2+=A[rel][jj][ii]*entity_vec[e2][jj];
-            }
-            double x = 2*(tmp2-tmp1-relation_vec[rel][ii]);
-            if (L1_flag)
-            	if (x>0)
-            		x=1;
-            	else
-            		x=-1;
-            for (int jj=0; jj<n; jj++)
-            {
-                A_tmp[rel][jj][ii]-=-1*rate*x*(ll*entity_vec[e1][jj]-rr*entity_vec[e2][jj]);
-                entity_tmp[e1][jj]-=-1*rate*ll*x*A[rel][jj][ii];
-                entity_tmp[e2][jj]+=-1*rate*rr*x*A[rel][jj][ii];
-            }
-        }
-    }
-    void same_kb(int e1,int e2,int rel)
-    {
-    	double sum = calc_sum(e1,e2,rel,0);
-    	if (sum>1)
-    	{
-    		res+=sum-1;
-		 	gradient_same(e1,e2,rel);
-		}
-    }
 };
 
 Train train;
