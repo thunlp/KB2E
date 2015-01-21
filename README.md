@@ -1,8 +1,14 @@
 ===== DATA =====
 
+The data use in the experiment can download in:
+
+FB15k, WN18 are published by the author of the paper "Translating Embeddings for Modeling Multi-relational Data (2013)."
+
+FB13, WN11 are published by the author of the paper "Reasoning With Neural Tensor Networks for Knowledge Base Completion".
 
 
-Datasets are included in the folder data/.
+
+Datasets are needed in the folder data/ in the following format
 
 Dataset contains six files:
 
@@ -47,6 +53,9 @@ For training, You need follow the step below:
 TransE:
 
 	call the program Train_TransE in folder TransE/
+	
+TransH:
+	call the program Train_TransH in folder TransH/
 
 TransR:
 
@@ -81,19 +90,6 @@ You can also change the parameters when running Train_TransE, Train_TransR, Trai
 For testing, You need follow the step below:
 
 
-
-
-
-TransE:
-
-	call the program Test_TransE with method as parameter in folder TransE/
-
-	i.e.
-
-		Test_TransE unif
-
-		Test_TransE bern
-
 TransR:
 
 	call the program Train_TransR with method as parameter in folder TransR/
@@ -102,5 +98,11 @@ CTransR:
 
 	call the program Train_CTransR with method as parameter in folder CTransR/
 
-It will evaluate on test.txt and report mean rank and Hits@10..
+It will evaluate on test.txt and report mean rank and Hits@10
+
+==CITE==
+
+If you use the code, you should cite the following paper:
+
+Lin, Y., Liu, Z., Sun, M., Liu, Y., & Zhu, X. (2015). Learning Entity and Relation Embeddings for Knowledge Graph Completion.
 
