@@ -104,4 +104,4 @@ It will evaluate on test.txt and report mean rank and Hits@10
 
 If you use the code, you should cite the following paper:
 
-Yankai Lin, Zhiyuan Liu, Maosong Sun, Yang Liu, Xuan Zhu. Learning Entity and Relation Embeddings for Knowledge Graph Completion. The 29th AAAI Conference on Artificial Intelligence (AAAI'15).[pdf](http://nlp.csai.tsinghua.edu.cn/~lzy/publications/aaai2015_tim.pdf)
+Yankai Lin, Zhiyuan Liu, Maosong Sun, Yang Liu, Xuan Zhu. Learning Entity and Relation Embeddings for Knowledge Graph Completion. The 29th AAAI Conference on Artificial Intelligence (AAAI'15).[[pdf]](http://nlp.csai.tsinghua.edu.cn/~lzy/publications/aaai2015_transr.pdf)
