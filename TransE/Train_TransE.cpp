@@ -325,7 +325,7 @@ int main(int argc,char**argv)
 {
     srand((unsigned) time(NULL));
     int method = 1;
-    int n = 50;
+    int n = 100;
     double rate = 0.001;
     double margin = 1;
     int i;

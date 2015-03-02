@@ -2,9 +2,13 @@
 
 The data use in the experiment can download in:
 
-FB15k, WN18 are published by the author of the paper "Translating Embeddings for Modeling Multi-relational Data (2013)."
+FB15k, WN18 are published by the author of the paper "Translating Embeddings for Modeling Multi-relational Data (2013)." [[Download]](https://everest.hds.utc.fr/doku.php?id=en:smemlj12)
 
-FB13, WN11 are published by the author of the paper "Reasoning With Neural Tensor Networks for Knowledge Base Completion".
+FB13, WN11 are published by the author of the paper "Reasoning With Neural Tensor Networks for Knowledge Base Completion". [[Download]](http://cs.stanford.edu/~danqi/data/nips13-dataset.tar.bz2)
+
+New York Times Corpus:  The data used in relation extraction from text which is publish by the paper " Modeling relations and their mentions without labeled text". If you want the data, you should buy from LDC (https://catalog.ldc.upenn.edu/LDC2008T19) first.
+
+FB40k [[Download]](http://pan.baidu.com/s/1c0xrtVa)
 
 
 
