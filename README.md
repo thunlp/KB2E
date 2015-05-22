@@ -1,6 +1,8 @@
 ===== DATA =====
 
-The data use in the experiment can download in:
+I provide FB15k and WN18  datasets used for the task link prediction with the input format of my code in data.zip.
+
+The original data use in the experiment can download in:
 
 FB15k, WN18 are published by the author of the paper "Translating Embeddings for Modeling Multi-relational Data (2013)." [[Download]](https://everest.hds.utc.fr/doku.php?id=en:smemlj12)
 
