@@ -98,11 +98,11 @@ For testing, You need follow the step below:
 
 TransR:
 
-	call the program Train_TransR with method as parameter in folder TransR/
+	call the program Test_TransR with method as parameter in folder TransR/
 
 CTransR:
 
-	call the program Train_CTransR with method as parameter in folder CTransR/
+	call the program Test_CTransR with method as parameter in folder CTransR/
 
 It will evaluate on test.txt and report mean rank and Hits@10
 
