@@ -106,6 +106,16 @@ CTransR:
 
 It will evaluate on test.txt and report mean rank and Hits@10
 
+==RESULT==
+We list the result of the code in date set FB15k and WN18.
+FB15k
+
+| TransE(paper)        |    243 | 125 |  34.9 | 47.1|
+| TransH(paper)        |   212 |  87 |  45.7 | 64.4|
+| TransR(n=50)        |    198| 77 |  48.2 | 68.7 |
+| TransE(Our, n=50)   | 210|	82  |	41.9|  61.3 |
+| TransE(Our, n=100)  |    205 |  63 |  47.9 | 70.2 |
+
 ==CITE==
 
 If you use the code, you should cite the following paper:
