@@ -1,3 +1,27 @@
+==RESULT==
+
+We list the result of the code in date set FB15k and WN18.
+
+FB15k
+
+| Model      |     MeanRank(Raw) |   MeanRank(Filter)   |	Hit@10(Raw)	| Hit@10(Filter)|
+| :-------- | --------:| :------: | :------: |:------: |
+| TransE(paper)|    243 | 125 |  34.9 | 47.1|
+| TransH(paper)        |   212 |  87 |  45.7 | 64.4|
+| TransR(n=50)        |    198| 77 |  48.2 | 68.7 |
+| TransE(Our, n=50)   | 210|	82  |	41.9|  61.3 |
+| TransE(Our, n=100)  |    205 |  63 |  47.9 | 70.2 |
+
+WN18
+
+| Model      |     MeanRank(Raw) |   MeanRank(Filter)   |	Hit@10(Raw)	| Hit@10(Filter)|
+| :-------- | --------:| :------: | :------: |:------: |
+| TransE(paper)|    263 |    251 | 75.4 | 89.2|
+| TransH(paper)        |    318 |    303 | 75.4 | 86.7|
+| TransR        |    238 | 225 | 79.8  |92.0|
+| TransE(Our)   | 251	|239|78.9|		89.8|
+
+
 ===== DATA =====
 
 I provide FB15k and WN18  datasets used for the task link prediction with the input format of my code in data.zip.
@@ -106,28 +130,7 @@ CTransR:
 
 It will evaluate on test.txt and report mean rank and Hits@10
 
-==RESULT==
 
-We list the result of the code in date set FB15k and WN18.
-
-FB15k
-
-| Model      |     MeanRank(Raw) |   MeanRank(Filter)   |	Hit@10(Raw)	| Hit@10(Filter)|
-| :-------- | --------:| :------: | :------: |:------: |
-| TransE(paper)|    243 | 125 |  34.9 | 47.1|
-| TransH(paper)        |   212 |  87 |  45.7 | 64.4|
-| TransR(n=50)        |    198| 77 |  48.2 | 68.7 |
-| TransE(Our, n=50)   | 210|	82  |	41.9|  61.3 |
-| TransE(Our, n=100)  |    205 |  63 |  47.9 | 70.2 |
-
-WN18
-
-| Model      |     MeanRank(Raw) |   MeanRank(Filter)   |	Hit@10(Raw)	| Hit@10(Filter)|
-| :-------- | --------:| :------: | :------: |:------: |
-| TransE(paper)|    263 |    251 | 75.4 | 89.2|
-| TransH(paper)        |    318 |    303 | 75.4 | 86.7|
-| TransR        |    238 | 225 | 79.8  |92.0|
-| TransE(Our)   | 251	|239|78.9|		89.8|
 
 
 ==CITE==
