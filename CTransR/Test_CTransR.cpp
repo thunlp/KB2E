@@ -27,8 +27,8 @@ map<pair<string,string>,map<string,double> > rel_left,rel_right;
 int relation_num,entity_num,fb_relation_num;
 map<int,int> cluster2fb;
 map<int,vector<int> > fb2cluster;
-int n = 50;
-int m = 50;
+int n = 100;
+int m = 100;
 
 double sigmod(double x)
 {

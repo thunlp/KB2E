@@ -23,8 +23,8 @@ map<int,int > e2num;
 map<pair<string,string>,map<string,double> > rel_left,rel_right;
 
 int relation_num,entity_num;
-int m= 50;
-int n= 50;
+int m= 100;
+int n= 100;
 
 double sigmod(double x)
 {
