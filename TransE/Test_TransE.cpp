@@ -115,8 +115,6 @@ public:
         relation_vec.resize(relation_num_fb);
         for (int i=0; i<relation_num_fb;i++)
         {
-        	int tmp;
-        	fscanf(f1,"%d",&tmp);
             relation_vec[i].resize(n);
             for (int ii=0; ii<n; ii++)
                 fscanf(f1,"%lf",&relation_vec[i][ii]);
@@ -124,8 +122,6 @@ public:
         entity_vec.resize(entity_num);
         for (int i=0; i<entity_num;i++)
         {
-        	int tmp;
-        	fscanf(f3,"%d",&tmp);
             entity_vec[i].resize(n);
             for (int ii=0; ii<n; ii++)
                 fscanf(f3,"%lf",&entity_vec[i][ii]);
