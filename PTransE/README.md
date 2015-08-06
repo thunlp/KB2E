@@ -1,6 +1,6 @@
 ===== DATA =====
 
-I provide FB15k  datasets used for the task Knowledge Base Completion with the input format of my code in data/.
+I provide FB15k  datasets used for the task Knowledge Base Completion with the input format in  [[Download]](http://pan.baidu.com/s/1qWwuP1U)
 
 Dataset contains six files:
 

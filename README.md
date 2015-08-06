@@ -1,3 +1,7 @@
+New: Add PTransE (EMNLP 2015) code!
+
+
+
 ==RESULT==
 
 We list the result of the code in date set FB15k and WN18.
@@ -11,6 +15,10 @@ FB15k
 | TransR(n=50)        |    198| 77 |  48.2 | 68.7 |
 | TransE(Our, n=50)   | 210|	82  |	41.9|  61.3 |
 | TransE(Our, n=100)  |    205 |  63 |  47.9 | 70.2 |
+|PTransE (ADD, 2-step) |    200 | 54 | 51.8 | 83.4|
+|PTransE (MUL, 2-step) |    216 |  67 | 47.4 | 77.7 |
+|PTransE (RNN, 2-step) | 242 | 92 | 50.6 | 82.2 |
+|PTransE (ADD, 3-step) |207 | 58 | 51.4 | 84.6 |
 
 WN18
 
