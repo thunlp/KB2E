@@ -286,8 +286,8 @@ private:
             relation_tmp[rel][ii]-=belta*rate*x;
             entity_tmp[e1][ii]-=belta*rate*x;
             entity_tmp[e2][ii]+=belta*rate*x;
-            A[rel][ii]+=belta*rate*x*tmp1;
-            A[rel][ii]-=belta*rate*x*tmp2;
+            A_tmp[rel][ii]+=belta*rate*x*tmp1;
+            A_tmp[rel][ii]-=belta*rate*x*tmp2;
         }
         for (int ii=0; ii<n; ii++)
         {
