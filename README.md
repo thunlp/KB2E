@@ -36,7 +36,7 @@ I provide FB15k and WN18  datasets used for the task link prediction with the in
 
 The original data use in the experiment can download in:
 
-FB15k, WN18 are published by the author of the paper "Translating Embeddings for Modeling Multi-relational Data (2013)." [[Download]](https://everest.hds.utc.fr/doku.php?id=en:smemlj12)
+FB15k, WN18 are published by the author of the paper "Translating Embeddings for Modeling Multi-relational Data (2013)." [[Download]](https://everest.hds.utc.fr/doku.php?id=en:transe)
 
 FB13, WN11 are published by the author of the paper "Reasoning With Neural Tensor Networks for Knowledge Base Completion". [[Download]](http://cs.stanford.edu/~danqi/data/nips13-dataset.tar.bz2)
 
