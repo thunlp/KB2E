@@ -121,7 +121,7 @@ public:
         entity_vec.resize(entity_num);
 		for (int i=0; i<entity_vec.size(); i++)
 			entity_vec[i].resize(n);
-        FILE* f1 = fopen("../TransW/entity2vec.unif","r");
+        FILE* f1 = fopen("../TransR/entity2vec.unif","r");
         for (int i=0; i<entity_num; i++)
         {
             for (int ii=0; ii<n; ii++)
@@ -130,7 +130,7 @@ public:
         }
         fclose(f1);
 
-		FILE* f2 = fopen("../TransW/relation2vec.unif","r");
+		FILE* f2 = fopen("../TransR/relation2vec.unif","r");
         for (int i=0; i<fb_relation_num; i++)
         {
             for (int ii=0; ii<n; ii++)
@@ -142,7 +142,7 @@ public:
             for (int ii=0; ii<n; ii++)
                 relation_vec[i][ii] = fb_relation_vec[cluster2fb[i]][ii];
         }
-        FILE* f3 = fopen("../TransW/A.unif","r");
+        FILE* f3 = fopen("../TransR/A.unif","r");
         for (int i=0; i<fb_relation_num; i++)
             for (int jj=0; jj<m; jj++)
                 for (int ii=0; ii<n; ii++)
