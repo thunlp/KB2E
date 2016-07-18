@@ -3,7 +3,7 @@ New: Add PTransE (EMNLP 2015) code!
 Evaluation Results
 ==========
 
-We list the result of the code in date set FB15k and WN18.
+We list the result of various methods implemented by ourselves in dateset FB15k and WN18.
 
 FB15k
 
@@ -67,7 +67,7 @@ Just type make in the folder ./
 Training
 ==========
 
-For training, you need follow the steps below:
+For training, you need to follow the steps below:
 
 TransE: call the program Train_TransE in folder TransE/
 	
@@ -98,7 +98,7 @@ You can also change the parameters when running Train_TransE, Train_TransR, Trai
 Testing
 ==========
 
-For testing, you need follow the steps below:
+For testing, you need to follow the steps below:
 
 TransR: Call the program Test_TransR with method as parameter in folder TransR/
 
