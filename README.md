@@ -1,7 +1,5 @@
 New: Add PTransE (EMNLP 2015) code!
 
-
-
 ===== RESULT =====
 
 We list the result of the code in date set FB15k and WN18.
