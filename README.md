@@ -1,6 +1,7 @@
 New: Add PTransE (EMNLP 2015) code!
 
-===== RESULT =====
+Evaluation Results
+==========
 
 We list the result of the code in date set FB15k and WN18.
 
@@ -28,27 +29,20 @@ WN18
 | TransE(Our)   | 251	|239|78.9|		89.8|
 
 
-===== DATA =====
+Data
+==========
 
-I provide FB15k and WN18  datasets used for the task link prediction with the input format of my code in data.zip.
+We provide FB15k and WN18 datasets used for the task link prediction in data.zip, using the input format required by our codes. The original data can be downloaded from:
 
-The original data use in the experiment can download in:
+FB15k, WN18 are published by "Translating Embeddings for Modeling Multi-relational Data (2013)." [[Download]](https://everest.hds.utc.fr/doku.php?id=en:transe)
 
-FB15k, WN18 are published by the author of the paper "Translating Embeddings for Modeling Multi-relational Data (2013)." [[Download]](https://everest.hds.utc.fr/doku.php?id=en:transe)
+FB13, WN11 are published by "Reasoning With Neural Tensor Networks for Knowledge Base Completion". [[Download]](http://cs.stanford.edu/~danqi/data/nips13-dataset.tar.bz2)
 
-FB13, WN11 are published by the author of the paper "Reasoning With Neural Tensor Networks for Knowledge Base Completion". [[Download]](http://cs.stanford.edu/~danqi/data/nips13-dataset.tar.bz2)
-
-New York Times Corpus:  The data used in relation extraction from text which is publish by the paper " Modeling relations and their mentions without labeled text". If you want the data, you should buy from LDC (https://catalog.ldc.upenn.edu/LDC2008T19) first.
+New York Times Corpus: The data used in relation extraction from text is publish by "Modeling relations and their mentions without labeled text". The data should be obtained from LDC (https://catalog.ldc.upenn.edu/LDC2008T19) first.
 
 FB40k [[Download]](http://pan.baidu.com/s/1c0xrtVa)
 
-
-
-Datasets are needed in the folder data/ in the following format
-
-Dataset contains six files:
-
-
+Datasets are required in the folder data/ in the following format, containing six files:
 
 + train.txt: training file, format (e1, e2, rel).
 
@@ -60,56 +54,38 @@ Dataset contains six files:
 
 + relation2id.txt: all relations and corresponding ids, one per line.
 
+Code
+==========
 
+The codes are in the folder TransE/, TransR/, CTransR/.
 
-Currently we cannot upload data due to huge size. We will release data with codes together once the paper is published.
-
-
-
-===== CODE =====
-
-In the folder TransE/, TransR/, CTransR/:
-
-
-
-===== COMPILE =====
+Compile
+==========
 
 Just type make in the folder ./
 
+Training
+==========
 
+For training, you need follow the steps below:
 
-== TRAINING ==
-
-For training, You need follow the step below:
-
-
-
-
-
-TransE:
-
-	call the program Train_TransE in folder TransE/
+TransE: call the program Train_TransE in folder TransE/
 	
-TransH:
-	call the program Train_TransH in folder TransH/
+TransH: call the program Train_TransH in folder TransH/
 
 TransR:
 
-	1:	Train the unif method of TransE as initialization.
++ Train the unif method of TransE as initialization.
 
-	2:  call the program Train_TransR in folder TransR/
++ Call the program Train_TransR in folder TransR/
 
 CTransR:
 
-	1:	Train the unif method of TransR as initialization.
++ Train the unif method of TransR as initialization.
 
-	2:  run the bash run.sh with relation number in folder cluster/ to cluster the triples in the trainning data.
++ Run the bash run.sh with relation number in folder cluster/ to cluster triples in the trainning data. e.g., bash run.sh 10
 
-		i.e.
-
-			bash run.sh 10
-
-	3:  call the program Train_cTransR in folder CTransR/
++ Call the program Train_cTransR in folder CTransR/
 
 You can also change the parameters when running Train_TransE, Train_TransR, Train_CTransR.
 
@@ -119,28 +95,20 @@ You can also change the parameters when running Train_TransE, Train_TransR, Trai
 
 -method: 0 - unif, 1 - bern
 
+Testing
+==========
 
+For testing, you need follow the steps below:
 
-== TESTING ==
+TransR: Call the program Test_TransR with method as parameter in folder TransR/
 
-For testing, You need follow the step below:
+CTransR: Call the program Test_CTransR with method as parameter in folder CTransR/
 
+It will evaluate on test.txt and report mean rank and Hits@10.
 
-TransR:
+Cite
+==========
 
-	call the program Test_TransR with method as parameter in folder TransR/
-
-CTransR:
-
-	call the program Test_CTransR with method as parameter in folder CTransR/
-
-It will evaluate on test.txt and report mean rank and Hits@10
-
-
-
-
-==CITE==
-
-If you use the code, you should cite the following paper:
+If you use the code, please kindly cite the following paper:
 
 Yankai Lin, Zhiyuan Liu, Maosong Sun, Yang Liu, Xuan Zhu. Learning Entity and Relation Embeddings for Knowledge Graph Completion. The 29th AAAI Conference on Artificial Intelligence (AAAI'15).[[pdf]](http://nlp.csai.tsinghua.edu.cn/~lzy/publications/aaai2015_transr.pdf)
