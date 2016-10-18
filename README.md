@@ -54,6 +54,8 @@ Datasets are required in the folder data/ in the following format, containing si
 
 + relation2id.txt: all relations and corresponding ids, one per line.
 
++ e1_e2.txt: the top-500 entity pairs which are calculated by TransE.  [[Download]](https://pan.baidu.com/s/1c2iLtmg)
+
 Code
 ==========
 
