@@ -233,8 +233,6 @@ private:
 						norm(entity_tmp[fb_h[i]],A_tmp[fb_r[i]]);
 						norm(entity_tmp[fb_l[i]],A_tmp[fb_r[i]]);
 						norm(entity_tmp[j],A_tmp[fb_r[i]]);
-						norm(entity_tmp[k]);
-						norm(entity_tmp[k],A_tmp[fb_r[i]]);
              		}
 		            relation_vec = relation_tmp;
 		            entity_vec = entity_tmp;
