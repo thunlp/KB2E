@@ -28,7 +28,7 @@ In the folder PTransE_add/, PTransE_mul/, PTransE_RNN/:
 
 ===== COMPILE =====
 
-Just type make in the folder ./
+Just type `make` in the folder ./
 
 
 
@@ -36,10 +36,10 @@ Just type make in the folder ./
 
 For training, You need follow the step below:
 
-1. Data preprocessing: python PCRA.py
+1. Data preprocessing: `python PCRA.py`
 
-2. call Train_TransE_path in the corresponding directory.
-	./Train_TransE_path 1
+2. call Train_TransE_path with a version argument in the corresponding directory.
+	`./Train_TransE_path 1`
 
 
 == TESTING ==
@@ -47,7 +47,7 @@ For training, You need follow the step below:
 For testing, You need follow the step below:
 
 call Test_TransE_path in the corresponding directory.
-	./Test_TransE_path 1
+	`./Test_TransE_path 1`
 
 It will evaluate on test.txt and report mean rank and Hits@1, the format is 
 tier: head_mean_rank(Raw) head_hit@1(Raw), head_mean_rank(Filter) head_hit@1(Filter), tail_mean_rank(Raw) tail_hit@1(Raw), tail_mean_rank(Filter) tail_hit@1(Filter)
