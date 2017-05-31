@@ -17,15 +17,13 @@ def map_add1(mp,key):
 
 f = open("data/relation2id.txt","r")
 relation2id = {}
-id2relation = {}
 relation_num = 0
 for line in f:
     seg = line.strip().split()
     relation2id[seg[0]] = int(seg[1])
-    id2relation[int(seg[1])]=seg[0]
-    id2relation[int(seg[1])+1345]="~"+seg[0]
     relation_num+=1
 f.close()
+
 f = open("data/train.txt","r")
 ok = {}
 a ={}
