@@ -392,14 +392,14 @@ void prepare()
 			fscanf(f_kb,"%lf",&pr);
 			b.push_back(make_pair(rel_path,pr));
 		}
-		//cout<<e1<<' '<<e2<<' '<<rel<<' '<<b.size()<<endl;
+//		cout<<e1<<' '<<e2<<' '<<rel<<' '<<b.size()<<endl;
         train.add(e1,e2,rel,b);
     }
 	relation_num*=2;
    
     cout<<"relation_num="<<relation_num<<endl;
     cout<<"entity_num="<<entity_num<<endl;
-	
+
 	FILE* f_confidence = fopen("../data/confidence.txt","r");
 	while (fscanf(f_confidence,"%d",&x)==1)
 	{
@@ -415,7 +415,7 @@ void prepare()
 			int y;
 			double pr;
 			fscanf(f_confidence,"%d%lf",&y,&pr);
-		//	cout<<s<<' '<<y<<' '<<pr<<endl;
+//			cout<<s<<' '<<y<<' '<<pr<<endl;
 			path_confidence[make_pair(s,y)] = pr;
 		}
 	}

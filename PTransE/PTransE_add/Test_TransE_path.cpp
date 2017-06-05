@@ -480,7 +480,7 @@ void prepare()
 		id2relation[x]=st;
 		relation_num++;
 	}
-    FILE* f_kb = fopen("../data/test_pra_3.txt","r");
+    FILE* f_kb = fopen("../data/test_pra.txt","r");
 	while (fscanf(f_kb,"%s",buf)==1)
     {
         string s1=buf;
@@ -516,13 +516,12 @@ void prepare()
 			fscanf(f_kb,"%lf",&pr);
 			b.push_back(make_pair(rel_path,pr));
 		}
-		//cout<<e1<<' '<<e2<<' '<<rel<<' '<<b.size()<<endl;
+		// cout<<e1<<' '<<e2<<' '<<rel<<' '<<b.size()<<endl;
 		b.clear();
         test.add(e1,e2,rel,b);
     }
     fclose(f_kb);
-	cout<<415<<endl;
-    FILE* f_path = fopen("../data/path.txt","r");
+    FILE* f_path = fopen("../data/path2.txt","r");
 	while (fscanf(f_path,"%s",buf)==1)
     {
         string s1=buf;
@@ -556,11 +555,10 @@ void prepare()
 			fscanf(f_path,"%lf",&pr);
 			b.push_back(make_pair(rel_path,pr));
 		}
-		//cout<<e1<<' '<<e2<<' '<<rel<<' '<<b.size()<<endl;
+		//cout<<e1<<' '<<e2<<" -1 "<<b.size()<<endl;
 		//b.clear();
         test.add(e1,e2,-1,b);
     }
-	cout<<454<<endl;
 	fclose(f_path);
     FILE* f_kb1 = fopen("../data/train.txt","r");
 	while (fscanf(f_kb1,"%s",buf)==1)
@@ -578,6 +576,7 @@ void prepare()
         {
             cout<<"miss entity:"<<s2<<endl;
         }
+        // TODO: this should never happen
         if (relation2id.count(s3)==0)
         {
             relation2id[s3] = relation_num;
@@ -588,6 +587,7 @@ void prepare()
         e2num[entity2id[s1]]+=1;
         e2num[entity2id[s2]]+=1;
         test.add(entity2id[s1],entity2id[s2],relation2id[s3],false);
+        //cout<<entity2id[s1]<<' '<<entity2id[s2]<<' '<<relation2id[s3]<<endl;
     }
     fclose(f_kb1);
     FILE* f_kb2 = fopen("../data/valid.txt","r");

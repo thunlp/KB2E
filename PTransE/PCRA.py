@@ -52,8 +52,6 @@ for line in f:
     a[e2][relation2id[rel] + relation_num][e1] = 1
 f.close()
 
-print len(ok), len(a)
-
 f = open("data/test.txt", "r")
 for line in f:
     seg = line.strip().split()
@@ -63,16 +61,12 @@ for line in f:
         ok[seg[1] + ' ' + seg[0]] = {}
 f.close()
 
-print len(ok), len(a)
-
 f = open("data/e1_e2.txt", "r")
 for line in f:
     seg = line.strip().split()
     ok[seg[0] + " " + seg[1]] = {}
     ok[seg[1] + " " + seg[0]] = {}
 f.close()
-
-print len(ok), len(a)
 
 path_dict = {}
 path_r_dict = {}
@@ -84,8 +78,10 @@ time1 = time.time()
 path_num = 0
 
 g = open("data/path2.txt", "w")
+print len(a)
 for e1 in a:
     step += 1
+
     print step,
     for rel1 in a[e1]:
         e2_set = a[e1][rel1]
@@ -93,21 +89,31 @@ for e1 in a:
             map_add1(path_dict, str(rel1))
             for key in ok[e1 + ' ' + e2]:
                 map_add1(path_r_dict, str(rel1) + "->" + str(key))
+                #print str(rel1) + "->" + str(key)
             map_add(h_e_p, e1 + ' ' + e2, str(rel1), 1.0 / len(e2_set))
+            #print e1 + ' ' + e2, str(rel1), 1.0 / len(e2_set)
     for rel1 in a[e1]:
         e2_set = a[e1][rel1]
         for e2 in e2_set:
-            if (e2 in a):
+            if e2 in a:
                 for rel2 in a[e2]:
                     e3_set = a[e2][rel2]
                     for e3 in e3_set:
                         map_add1(path_dict, str(rel1) + " " + str(rel2))
+                        #print str(rel1) + " " + str(rel2)
                         if e1 + " " + e3 in ok:
                             for key in ok[e1 + ' ' + e3]:
                                 map_add1(path_r_dict, str(rel1) + " " + str(rel2) + "->" + str(key))
                         if e1 + " " + e3 in ok:
                             map_add(h_e_p, e1 + ' ' + e3, str(rel1) + ' ' + str(rel2),
                                     h_e_p[e1 + ' ' + e2][str(rel1)] * 1.0 / len(e3_set))
+                            #print e1 + ' ' + e3, str(rel1) + ' ' + str(rel2),\
+                            #    h_e_p[e1 + ' ' + e2][str(rel1)] * 1.0 / len(e3_set)
+
+    #print "path_dict", len(path_dict)
+    #print "path_r_dict", len(path_r_dict)
+    #print "h_e_p", len(h_e_p)
+
     for e2 in a:
         e_1 = e1
         e_2 = e2
@@ -134,7 +140,6 @@ for e1 in a:
 
 g = open("data/confidence.txt", "w")
 for rel_path in train_path:
-
     out = []
     for i in range(0, relation_num):
         if rel_path in path_dict and rel_path + "->" + str(i) in path_r_dict:
