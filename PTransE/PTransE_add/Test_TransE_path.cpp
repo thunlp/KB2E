@@ -246,13 +246,13 @@ public:
 		map<int,double> rp_n_r,rp_n_filter_r;
 		map<int,double> mid_p_n_r,mid_p_n_filter_r;
 		map<int,int> rel_num;
-		
-		
+
+
 		double l_one2one=0,r_one2one=0,one2one_num=0;
         double l_n2one=0,r_n2one=0,n2one_num=0;
         double l_one2n=0,r_one2n=0,one2n_num=0;
         double l_n2n=0,r_n2n=0,n2n_num=0;
-		
+
 
 		int hit_n = 1;
 		//FILE* f_e1_e2 = fopen("../e1_e2.txt","w");
@@ -355,8 +355,12 @@ public:
 			sort(a.begin(),a.end(),cmp);
 			ttt=0;
 			filter=0;
+
+			cout<<"Predicting "<<id2Entity[h]<<" "<<id2relation[rel]<<endl;
 			for (int i=a.size()-1; i>=0; i--)
 			{
+			    
+			    cout<<"\t"<<id2Entity[a[i].first]<<" scored "<<a[i].second<<endl;
 				if (a.size()-i<=rerank_num)
 					e1_e2[make_pair(h,a[i].first)] = 1;
 				if (ok[make_pair(h,rel)].count(a[i].first)>0)
@@ -442,20 +446,20 @@ public:
 				
 			}
 		}
-	//	for (map<pair<int,int>,int>::iterator it = e1_e2.begin(); it!=e1_e2.end(); it++)
-	//		fprintf(f_e1_e2,"%d %d\n",it->first.first,it->first.second);
-	//	fclose(f_e1_e2);
-	//	cout<<"\t"<<mid_sum/(fb_l.size()/2+1)<<' '<<mid_p_n/(fb_l.size()/2+1)<<"\t"<<mid_sum_filter/(fb_l.size()/2+1)<<' '<<mid_p_n_filter/(fb_l.size()/2+1)<<endl;
-	//	cout<<"left:"<<lsum/fb_l.size()<<'\t'<<lp_n/fb_l.size()<<"\t"<<lsum_filter/fb_l.size()<<'\t'<<lp_n_filter/fb_l.size()<<endl;
-	//	cout<<"right:"<<rsum/fb_r.size()<<'\t'<<rp_n/fb_r.size()<<'\t'<<rsum_filter/fb_r.size()<<'\t'<<rp_n_filter/fb_r.size()<<endl;
-		/*for (int rel=0; rel<relation_num; rel++)
+//		for (map<pair<int,int>,int>::iterator it = e1_e2.begin(); it!=e1_e2.end(); it++)
+//			fprintf(f_e1_e2,"%d %d\n",it->first.first,it->first.second);
+//		fclose(f_e1_e2);
+		cout<<"\t"<<mid_sum/(fb_l.size()/2+1)<<' '<<mid_p_n/(fb_l.size()/2+1)<<"\t"<<mid_sum_filter/(fb_l.size()/2+1)<<' '<<mid_p_n_filter/(fb_l.size()/2+1)<<endl;
+		cout<<"left:"<<lsum/fb_l.size()<<'\t'<<lp_n/fb_l.size()<<"\t"<<lsum_filter/fb_l.size()<<'\t'<<lp_n_filter/fb_l.size()<<endl;
+		cout<<"right:"<<rsum/fb_r.size()<<'\t'<<rp_n/fb_r.size()<<'\t'<<rsum_filter/fb_r.size()<<'\t'<<rp_n_filter/fb_r.size()<<endl;
+		for (int rel=0; rel<relation_num; rel++)
 		{
 			int num = rel_num[rel];
 			cout<<"rel:"<<id2relation[rel]<<' '<<num<<endl;
 			cout<<"left:"<<lsum_r[rel]/num<<'\t'<<lp_n_r[rel]/num<<"\t"<<lsum_filter_r[rel]/num<<'\t'<<lp_n_filter_r[rel]/num<<endl;
 			cout<<"right:"<<rsum_r[rel]/num<<'\t'<<rp_n_r[rel]/num<<'\t'<<rsum_filter_r[rel]/num<<'\t'<<rp_n_filter_r[rel]/num<<endl;
 			cout<<"mid:"<<mid_sum_r[rel]/num<<'\t'<<mid_p_n_r[rel]/num<<'\t'<<mid_sum_filter_r[rel]/num<<'\t'<<mid_p_n_filter_r[rel]/num<<endl;
-		}*/
+		}
     }
 
 };
@@ -639,7 +643,7 @@ void prepare()
         double x,y;
         while (fscanf(f7,"%lf%lf",&x,&y)==2)
         {
-            //cout<<x<<' '<<y<<endl;
+//            cout<<x<<' '<<y<<endl;
             if (x<1.5)
             {
                 if (y<1.5)
