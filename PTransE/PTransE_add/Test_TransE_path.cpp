@@ -253,7 +253,7 @@ public:
         double l_one2n=0,r_one2n=0,one2n_num=0;
         double l_n2n=0,r_n2n=0,n2n_num=0;
 
-
+        cout<<"Beginning main eval lopp..."<<endl;
 		int hit_n = 1;
 		//FILE* f_e1_e2 = fopen("../e1_e2.txt","w");
 		map<pair<int,int>,int> e1_e2;
@@ -356,11 +356,11 @@ public:
 			ttt=0;
 			filter=0;
 
-			cout<<"Predicting "<<id2entity[h]<<" "<<id2relation[rel]<<endl;
+			cout<<"Predicting https://www.google.com/search?q=knowledge+graph+search+api&kponly&kgmid=/"<<id2entity[h]<<" https://www.google.com/search?q=knowledge+graph+search+api&kponly&kgmid=/"<<id2relation[rel]<<endl;
 			for (int i=a.size()-1; i>=0; i--)
 			{
 
-			    cout<<"\t"<<id2entity[a[i].first]<<" scored "<<a[i].second<<endl;
+			    cout<<"\thttps://www.google.com/search?q=knowledge+graph+search+api&kponly&kgmid=/"<<id2entity[a[i].first]<<" scored "<<a[i].second<<endl;
 				if (a.size()-i<=rerank_num)
 					e1_e2[make_pair(h,a[i].first)] = 1;
 				if (ok[make_pair(h,rel)].count(a[i].first)>0)
