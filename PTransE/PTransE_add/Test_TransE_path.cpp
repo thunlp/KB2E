@@ -356,11 +356,11 @@ public:
 			ttt=0;
 			filter=0;
 
-			cout<<"Predicting "<<id2Entity[h]<<" "<<id2relation[rel]<<endl;
+			cout<<"Predicting "<<id2entity[h]<<" "<<id2relation[rel]<<endl;
 			for (int i=a.size()-1; i>=0; i--)
 			{
-			    
-			    cout<<"\t"<<id2Entity[a[i].first]<<" scored "<<a[i].second<<endl;
+
+			    cout<<"\t"<<id2entity[a[i].first]<<" scored "<<a[i].second<<endl;
 				if (a.size()-i<=rerank_num)
 					e1_e2[make_pair(h,a[i].first)] = 1;
 				if (ok[make_pair(h,rel)].count(a[i].first)>0)
