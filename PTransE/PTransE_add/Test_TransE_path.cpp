@@ -356,7 +356,7 @@ public:
 			ttt=0;
 			filter=0;
 
-			cout<<"Predicting https://www.google.com/search?q=knowledge+graph+search+api&kponly&kgmid="<<id2entity[h]<<" https://www.google.com/search?q=knowledge+graph+search+api&kponly&kgmid="<<id2relation[rel]<<endl;
+			cout<<"Predicting https://www.google.com/search?q=knowledge+graph+search+api&kponly&kgmid="<<id2entity[h]<<" "<<id2relation[rel]<<endl;
 			for (int i=a.size()-1; i>=0; i--)
 			{
                 if (a.size() - i < 10)
