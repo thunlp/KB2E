@@ -267,11 +267,12 @@ private:
         {
 
             double x = 2*(entity_vec[e2][ii]-entity_vec[e1][ii]-relation_vec[rel][ii]);
-            if (L1_flag)
+            if (L1_flag) {
             	if (x>0)
             		x=1;
             	else
             		x=-1;
+            }
             relation_tmp[rel][ii]-=belta*rate*x;
             entity_tmp[e1][ii]-=belta*rate*x;
             entity_tmp[e2][ii]+=belta*rate*x;
@@ -300,11 +301,12 @@ private:
 			double x = relation_vec[r1][ii];
 			for (int j=0; j<rel_path.size(); j++)
 				x-=relation_vec[rel_path[j]][ii];
-            if (L1_flag)
+            if (L1_flag) {
             	if (x>0)
             		x=1;
             	else
             		x=-1;
+            }
             relation_tmp[r1][ii]+=belta*rate*x;
 			for (int j=0; j<rel_path.size(); j++)
             	relation_tmp[rel_path[j]][ii]-=belta*rate*x;
