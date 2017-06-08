@@ -229,23 +229,24 @@ private:
 	            entity_vec = entity_tmp;
          	}
             cout<<"eval:"<<eval<<' '<<res<<endl;
-            FILE* f2 = fopen(("relation2vec.txt"+version).c_str(),"w");
-            FILE* f3 = fopen(("entity2vec.txt"+version).c_str(),"w");
-            for (int i=0; i<relation_num; i++)
-            {
-                for (int ii=0; ii<n; ii++)
-                    fprintf(f2,"%.6lf\t",relation_vec[i][ii]);
-                fprintf(f2,"\n");
-            }
-            for (int i=0; i<entity_num; i++)
-            {
-                for (int ii=0; ii<n; ii++)
-                    fprintf(f3,"%.6lf\t",entity_vec[i][ii]);
-                fprintf(f3,"\n");
-            }
-            fclose(f2);
-            fclose(f3);
         }
+
+        FILE* f2 = fopen(("relation2vec.txt"+version).c_str(),"w");
+        FILE* f3 = fopen(("entity2vec.txt"+version).c_str(),"w");
+        for (int i=0; i<relation_num; i++)
+        {
+            for (int ii=0; ii<n; ii++)
+                fprintf(f2,"%.6lf\t",relation_vec[i][ii]);
+            fprintf(f2,"\n");
+        }
+        for (int i=0; i<entity_num; i++)
+        {
+            for (int ii=0; ii<n; ii++)
+                fprintf(f3,"%.6lf\t",entity_vec[i][ii]);
+            fprintf(f3,"\n");
+        }
+        fclose(f2);
+        fclose(f3);
     }
     double res1;
     double calc_kb(int e1,int e2,int rel)
