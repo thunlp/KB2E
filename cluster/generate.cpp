@@ -78,7 +78,7 @@ int main(int argc, char** argv)
         train_e2.push_back(e2);
         train_rel.push_back(rel);
     }
-    FILE* f_ent_vec = fopen("../TransE/entity2vec.txt2","r");
+    FILE* f_ent_vec = fopen("../TransE/entity2vec.txt","r");
 
    // FILE* f_ent_vec = fopen("../data/entity_vec_word2vec.txt","r");
     int vec_size=50;
