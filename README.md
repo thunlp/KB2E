@@ -1,4 +1,5 @@
-The project will not be maintained and the users are recommended to access and use https://github.com/thunlp/OpenKE.
+<font color="#dd0000">The project will not be maintained and the users are recommended to access and use https://github.com/thunlp/OpenKE.
+</font>
 
 New: Add PTransE (EMNLP 2015) code!
 
