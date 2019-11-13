@@ -1,4 +1,4 @@
-## The project will no longer be maintained and users are recommended to access and use the new package https://github.com/thunlp/OpenKE.
+## !!#ff0000 The project will no longer be maintained and users are recommended to access and use the new package https://github.com/thunlp/OpenKE. !!
 
 Evaluation Results
 ==========
