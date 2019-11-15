@@ -102,6 +102,8 @@ Testing
 
 For testing, you need to follow the steps below:
 
+TransE : `./Test_TransE bern`.
+
 TransR: Call the program Test_TransR with method as parameter in folder TransR/
 
 CTransR: Call the program Test_CTransR with method as parameter in folder CTransR/
