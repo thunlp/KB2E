@@ -8,6 +8,7 @@
 #include<ctime>
 #include<cmath>
 #include<cstdlib>
+#include <fstream>
 using namespace std;
 
 
@@ -242,47 +243,65 @@ private:
 Train train;
 void prepare()
 {
-    FILE* f1 = fopen("../data/entity2id.txt","r");
-	FILE* f2 = fopen("../data/relation2id.txt","r");
-	int x;
-	while (fscanf(f1,"%s%d",buf,&x)==2)
+    ifstream f1;
+    ifstream f2;
+    int x;
+    string line;
+
+	f1.open("../data/entity2id.txt");
+	while (getline(f1, line))
 	{
-		string st=buf;
-		entity2id[st]=x;
-		id2entity[x]=st;
-		entity_num++;
+        string st = line.substr(0, line.find('\t'));
+        x = stoi(line.substr(line.find('\t') + 1, line.length() - line.find('\t')));
+        entity2id[st] = x;
+        id2entity[x] = st;
+        entity_num++;
 	}
-	while (fscanf(f2,"%s%d",buf,&x)==2)
+	f1.close();
+
+	f2.open("../data/relation2id.txt");
+	while (getline(f2, line))
 	{
-		string st=buf;
-		relation2id[st]=x;
-		id2relation[x]=st;
-		relation_num++;
+        string st = line.substr(0, line.find('\t'));
+        x = stoi(line.substr(line.find('\t') + 1, line.length() - line.find('\t')));
+        relation2id[st] = x;
+        id2relation[x] = st;
+        relation_num++;
 	}
-    FILE* f_kb = fopen("../data/train.txt","r");
-	while (fscanf(f_kb,"%s",buf)==1)
+
+    ifstream f_kb;
+	f_kb.open("../data/train.txt");
+    string* s = new string[3];
+	while (getline(f_kb, line))
     {
-        string s1=buf;
-        fscanf(f_kb,"%s",buf);
-        string s2=buf;
-        fscanf(f_kb,"%s",buf);
-        string s3=buf;
-        if (entity2id.count(s1)==0)
-        {
-            cout<<"miss entity:"<<s1<<endl;
+        // parse e1, rel, e2
+        size_t pos = 0;
+        int i = 0;
+        string token;
+        string delimiter = "\t";
+        while ((pos = line.find(delimiter)) != std::string::npos) {
+            token = line.substr(0, pos);
+            s[i++] = token;
+            line.erase(0, pos + delimiter.length());
         }
-        if (entity2id.count(s2)==0)
+        s[2] = line;
+
+        if (entity2id.count(s[0])==0)
         {
-            cout<<"miss entity:"<<s2<<endl;
+            cout<<"miss entity:"<<s[0]<<endl;
         }
-        if (relation2id.count(s3)==0)
+        if (entity2id.count(s[2])==0)
         {
-            relation2id[s3] = relation_num;
+            cout<<"miss entity:"<<s[2]<<endl;
+        }
+        if (relation2id.count(s[1])==0)
+        {
+            relation2id[s[1]] = relation_num;
             relation_num++;
         }
-        left_entity[relation2id[s3]][entity2id[s1]]++;
-        right_entity[relation2id[s3]][entity2id[s2]]++;
-        train.add(entity2id[s1],entity2id[s2],relation2id[s3]);
+        left_entity[relation2id[s[1]]][entity2id[s[0]]]++;
+        right_entity[relation2id[s[1]]][entity2id[s[2]]]++;
+        train.add(entity2id[s[0]],entity2id[s[2]],relation2id[s[1]]);
     }
     for (int i=0; i<relation_num; i++)
     {
